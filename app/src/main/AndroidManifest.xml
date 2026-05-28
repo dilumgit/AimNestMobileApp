@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AimNestMobileApp">
+        <activity
+            android:name=".PaymentMethodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TargetsOverviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddIncomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpgradePro"
+            android:exported="false" />
+        <activity
+            android:name=".ProActivated"
+            android:exported="false" />
+        <activity
+            android:name=".Monthly_Income_Summary"
+            android:exported="false" />
+        <activity
+            android:name=".smart_suggetion"
+            android:exported="false" />
+        <activity
+            android:name=".delete_target"
+            android:exported="false" />
+        <activity
+            android:name=".delete_income"
+            android:exported="false" />
+        <activity
+            android:name=".edit_income"
+            android:exported="false" />
+        <activity
+            android:name=".income_list"
+            android:exported="false" />
+        <activity
+            android:name=".edit_target"
+            android:exported="false" />
+        <activity
+            android:name=".target_details"
+            android:exported="false" />
+        <activity
+            android:name=".target_list"
+            android:exported="false" />
+        <activity
+            android:name=".add_target"
+            android:exported="false" />
+        <activity
+            android:name=".EditExpenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddExpenseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteExpensesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExpensesListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationCenterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AlertsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SideMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AnalysisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeleteProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileOverviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Dashboard"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+    <!-- Permissions for reading images from storage -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+</manifest>

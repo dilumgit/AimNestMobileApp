@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AimNest Mobile App</string>
+    <string name="welcome_back">Welcome Back,</string>
+    <string name="emi_tracker">EMI Tracker</string>
+    <string name="reports">Reports</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="next_renewal_date_format">Next renewal : %1$s</string>
+</resources>

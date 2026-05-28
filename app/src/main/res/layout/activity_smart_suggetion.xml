@@ -1,0 +1,537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".smart_suggetion">
+
+    <!-- Top Logo -->
+    <ImageView
+        android:id="@+id/topLogo"
+        android:layout_width="110dp"
+        android:layout_height="90dp"
+        android:src="@drawable/aimnestlogo2"
+        android:scaleType="fitCenter"
+        android:contentDescription="AimNest Logo"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Title Row with Back Button -->
+    <LinearLayout
+        android:id="@+id/titleRow"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintTop_toBottomOf="@id/topLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Back Button -->
+        <ImageView
+            android:id="@+id/backButton"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"
+            android:scaleType="fitCenter"
+            android:contentDescription="Back" />
+
+        <!-- Spacer -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <!-- Title -->
+        <TextView
+            android:id="@+id/smartSuggestionsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Smart Suggestions"
+            android:textSize="20sp"
+            android:textColor="#0B0F3F"
+            android:textStyle="bold" />
+
+        <!-- Spacer -->
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+    <!-- Scrollable Content Area -->
+    <ScrollView
+        android:id="@+id/contentScroll"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#E6ECF5"
+        app:layout_constraintTop_toBottomOf="@id/titleRow"
+        app:layout_constraintBottom_toTopOf="@id/footerPanel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <!-- Top Suggestion Card -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/suggestionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                android:layout_marginBottom="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical">
+
+                    <!-- Left Side: Icon and Text -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:layout_marginBottom="8dp">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/alert1"
+                                android:scaleType="fitCenter"
+                                android:layout_marginEnd="12dp"
+                                android:contentDescription="Alert Icon" />
+
+                            <TextView
+                                android:id="@+id/topSuggestionTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Income Shortfall"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/topSuggestionDesc"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="You need $800 more this month to cover your expenses. consider options to increase your income."
+                            android:textSize="13sp"
+                            android:textColor="#666666"
+                            android:lineSpacingExtra="2dp" />
+
+                    </LinearLayout>
+
+                    <!-- Right Side: Illustration -->
+                    <ImageView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:src="@drawable/smart1"
+                        android:scaleType="fitCenter"
+                        android:layout_marginStart="12dp"
+                        android:contentDescription="Smart Illustration" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Recommended Section Title -->
+            <TextView
+                android:id="@+id/recommendedTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Income Option Recommended"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Recommendation Cards Row -->
+            <LinearLayout
+                android:id="@+id/recommendationsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="20dp">
+
+                <!-- Card 1: Freelance -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_marginEnd="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/smart2"
+                                android:scaleType="fitCenter"
+                                android:layout_marginBottom="8dp"
+                                android:contentDescription="Freelance" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Freelance"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333"
+                                android:layout_marginBottom="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$300"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#1976D2"
+                                android:layout_marginBottom="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Apr 24, 2024"
+                                android:textSize="11sp"
+                                android:textColor="#999999" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card 2: PartTime -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@android:color/white"
+                    android:layout_marginEnd="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:src="@drawable/smart3"
+                                android:scaleType="fitCenter"
+                                android:layout_marginBottom="8dp"
+                                android:contentDescription="PartTime" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PartTime"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="#333333"
+                                android:layout_marginBottom="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="$300"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#1976D2"
+                                android:layout_marginBottom="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Apr 24, 2024"
+                                android:textSize="11sp"
+                                android:textColor="#999999" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Card 3: Freelance (Recommended) -->
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_weight="1"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="3dp"
+                    app:cardBackgroundColor="@android:color/white">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="60dp"
+                                android:layout_height="60dp"
+                                android:layout_marginBottom="8dp"
+                                android:contentDescription="Freelance"
+                                android:scaleType="fitCenter"
+                                android:src="@drawable/smart4" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="Freelance"
+                                android:textColor="#333333"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:text="$300"
+                                android:textColor="#1976D2"
+                                android:textSize="13sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Apr 24, 2024"
+                                android:textColor="#999999"
+                                android:textSize="11sp" />
+
+                        </LinearLayout>
+
+                        <!-- Recommended Label Overlay -->
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top|end"
+                            android:layout_margin="8dp"
+                            app:cardCornerRadius="6dp"
+                            app:cardElevation="2dp"
+                            app:cardBackgroundColor="#FF9800">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Recommended"
+                                android:textSize="10sp"
+                                android:textColor="@android:color/white"
+                                android:textStyle="bold"
+                                android:padding="4dp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <!-- Apply Plan Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/applyPlanButton"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Apply Plan"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                app:backgroundTint="#1976D2"
+                app:cornerRadius="12dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!-- Footer UI Panel -->
+    <LinearLayout
+        android:id="@+id/footerPanel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:id="@+id/menuItemManageIncome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="8dp"
+            >
+
+            <ImageView
+                android:id="@+id/iconManageIncome"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/manageincome"
+                android:scaleType="fitCenter"
+                android:contentDescription="Manage Income"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/labelManageIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage&#10;Income"
+                android:textSize="12sp"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:lines="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menuItemManageExpenses"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/iconManageExpenses"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/manageexpenses"
+                android:scaleType="fitCenter"
+                android:contentDescription="Manage Expenses"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/labelManageExpenses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage&#10;Expenses"
+                android:textSize="12sp"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:lines="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menuItemManageTarget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/iconManageTarget"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/managetargets"
+                android:scaleType="fitCenter"
+                android:contentDescription="Manage Target"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/labelManageTarget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manage&#10;Target"
+                android:textSize="12sp"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:lines="2" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/menuItemViewAnalysis"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:paddingHorizontal="8dp">
+
+            <ImageView
+                android:id="@+id/iconViewAnalysis"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/viewanalysis"
+                android:scaleType="fitCenter"
+                android:contentDescription="View Analysis"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/labelViewAnalysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View&#10;Analysis"
+                android:textSize="12sp"
+                android:textColor="#333333"
+                android:textAlignment="center"
+                android:lines="2" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
