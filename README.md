@@ -52,7 +52,7 @@ Developed:
 
 ---
 
-### H.A.R. Navanjala
+### H.A.R. Nawanjala
 **Student ID:** ITBIN-2313-0068
 
 Developed:
